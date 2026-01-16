@@ -64,3 +64,16 @@ destroy：データの削除
 - https://www.youtube.com/watch?v=1BufFqTbhyU
 -https://school.learning-next.app/docs/rails/rails_basic/edit-update
 
+
+# 日付: 2024/01/1６
+
+## 学習内容
+- <%= render　が連続であると、どこを指しているのかわからないくなる
+
+### つまずいたポイント
+- HTML構文。どこの/divか、どこに<%= renderを入れるかなど理解が難しかった
+
+## 明日やること
+- つまづいたHTML構文の復習
+- カリキュラムの続き
+

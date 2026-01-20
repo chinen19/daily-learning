@@ -84,9 +84,6 @@ destroy：データの削除
 - <% end %>が必要なのはどんなときは、 Rubyのブロック(do ~ end)を使っているとき。例）form_with、each、ifなど
 - <%= render 'form', board: @board %>は_form.html.erbを呼び出している
 - _パーシャルを使う理由は、new.html.erbとedit.html.erbで同じフォームを使い回すため
-- 
-
-
 
 ### つまずいたポイント
 - 不要なendのエラーが出てきたとき、<%  %>があれば、<% end %>はあるもんだと思い込んでいた
@@ -108,12 +105,8 @@ destroy：データの削除
  新規作成なら → "Create Comment"
 　更新なら → "Update Comment"
 
-
-
-
 ### つまずいたポイント
 - １対多、多対多が文章になると理解が難しいので、技術記事を参考にしながら勉強する
-
 
 ## 明日やること
 - カリキュラムのER図を書く
@@ -123,3 +116,46 @@ destroy：データの削除
  https://qiita.com/ramuneru/items/db43589551dd0c00fef9
 - やさしい図解で学ぶ　ER図　表記法一覧
 https://qiita.com/ramuneru/items/32fbf3032b625f71b69d
+
+
+
+# 日付: 2026/01/２０
+## 学習内容
+- 用語
+- GETメソッド・POSTメソッドとは
+・GETメソッドはサーバからさまざまなリソースを取ってくるメソッド。リソースとはhtml/img/jsなどを指す。
+・POSTメソッドはサーバへ情報を追加するメソッド
+・他にもメソッドにはPUT、DELETEなども存在する
+- validatesとは汎用的なバリデーション
+:uniqueness重複していないこと
+例）validates :email,uniqueness: true
+- validates_uniqueness_of(フィールド名..)とは、属性の値が一意であることをバリデーション
+※ 一意（ユニーク）とは、重複のないもの
+:scopeは、一意性制約を決めるために使用する他のカラム	 
+例）validates_uniqueness_of :board_id, scope: :user_id 
+
+## 詳細メモ
+- エンティティとは「実体」
+E-R図で出てくる箱
+- HTTPとはプロトコル（通信のルール）の一種。プロトコルは説明書のイメージ
+- バリデーションとはデータを保存する前に、無効なデータでないことを検証する機能のこと
+
+### つまずいたポイント
+- 意味を忘れている用語が多く、何のことを言っているかわからなかった
+- 似たようなファイルが多く、書くものを間違えていた
+
+### 解決方法
+- users,boards,bookmarksのER図書いて相互関係を考えた
+- 用語を調べ直した
+- 実装フェーズを見直し、ファイルに書く意味を考えた
+
+## 明日やること
+- カリキュラム続きする
+- ルーティング一覧の見方を理解する
+
+## 参考リンク
+- ポート番号/NAT/NAPTの学習メモなどhttps://qiita.com/Kazuyaa/items/5fa259e94098c0d0ca2d
+- Railsドキュメント
+ https://railsdoc.com/page/validates_uniqueness_of
+- validates_uniqueness_ofとは
+https://qiita.com/kimino0525/items/109f23eff40bbd4e8b50

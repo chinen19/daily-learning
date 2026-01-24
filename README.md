@@ -159,3 +159,26 @@ E-R図で出てくる箱
  https://railsdoc.com/page/validates_uniqueness_of
 - validates_uniqueness_ofとは
 https://qiita.com/kimino0525/items/109f23eff40bbd4e8b50
+
+
+# 日付: 2026/01/24
+
+## 学習内容
+- 末尾の空白の有無
+- ディレクトリ作成するとき、ファイルも一緒に作成しようとしない。個別で作成する。
+- ブックマーク機能を作成するにあたってBookmarksControllerとBoardsControllerの違い
+- アクションのeditとupdateの違い
+
+## 詳細メモ
+- ファイル末尾の改行は必要。Gitなどのバージョン管理システムが正しく動作するため
+- BookmarksControllerはブックマーク情報の操作（ブックマーク作成、削除）、BoardsControllerは、掲示板の表示（全掲示板一覧、ブックマーク済み掲示板一覧）で役割で分ける。
+全てBookmarksControllerに入れると、URLが /bookmarks になり、「掲示板の一覧」という意味が伝わりにくい
+- editは、編集画面を表示する。データベースは変更しない。
+updateは、データを更新する。
+
+### つまずいたポイント
+- 何回もLinkエラーが出ていたが空白の有無をわかっていなかった
+- ファイルの違いがわかっていなかった。アクションの違いもわかっていなかったため、editとupdateを混同して考えていた
+
+## 明日やること
+- 違いを意識しながらカリキュラムを進めていく。

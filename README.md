@@ -198,3 +198,50 @@ updateは、データを更新する。
 ## 参考リンク
 - [掲示板にコメント機能を実装する③](https://study-diary.hatenadiary.jp/entry/2020/08/11/231101)
 
+
+# 日付: 2026/01/２８
+
+## 学習内容
+- oder
+- Turbo Streams
+- redirect_toを使用したい時
+-　「基本的にはハイフンでつなげることが HTML の ID属性の命名規則」- flashメッセージ
+
+## 詳細メモ
+-　Turbo Streams は、HTMLの断片をリアルタイムに更新できる
+代表的なアクションには、 append、prepend、replace、update、remove、before、after 
+- * replace は、指定した 要素全体を置き換え
+    * 例: <div id="comment-123">...</div> という要素全体を新しいものに置き換える
+* update は、指定した 要素の中身だけを更新
+    * 例: <div id="comment-123">ここの中身だけ</div> を更新する
+- redirect_toを使用したい時
+データの更新が成功したときは、HTTPリクエストを走らせて別のページに遷移する。
+- renderを使用したい時
+保存に失敗したときは、エラーメッセージを添えてviewを表示してやるだけでOK。無駄にリクエストを増やさないようにする。データの登録は行われていないので、リロードされても問題ない。
+- orderメソッドは、並び順を変更するメソッド
+並び替えの基準にはASC(昇順)とDESC(降順)の2種類があり、ASCは値が古いものから新しいのものになり、DESCはその逆で新しいものから古いものになる
+
+app/controllers/tweets_controller.rb
+〜省略〜
+  def index
+    @tweets = Tweet.includes(:user).order("created_at DESC")
+  end
+- flashメッセージとは、Webサービスにて何かの処理を行なった際に、それが正しく行われたかをユーザー側で確認できるよう、メッセージで表示させるための機能。
+flash[:notice] = "ユーザーの新規登録に成功しました"
+flash[:success] = "ログインに成功しました"
+flash[:danger] = "コメント投稿に失敗しました"
+
+### つまずいたポイント
+- 忘れているものや、根本的にわかっていないものが多いためつまづいた
+
+### 解決方法
+- 調べたり、ロボランてくんに聞いた
+
+## 明日やること
+- コメント投稿、削除機能のajax化の復習
+
+## 参考リンク
+- [redirect_toとrenderの使い分け](https://qiita.com/s3710/items/7162c66a8b4a875d2696#:~:text=%E6%A6%82%E8%A6%81.%20Rails%E3%81%A7%20scaffold%20%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%89create%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AF%E4%BB%A5%E4%B8%8B%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8B%E3%80%82%20%E4%BF%9D%E5%AD%98%E3%81%AB%E6%88%90%E5%8A%9F%E3%81%97%E3%81%9F%E6%99%82%E3%81%AF%20redirect_to%20%E3%81%A7%E3%83%9A%E3%83%BC%E3%82%B8%E9%81%B7%E7%A7%BB%E3%81%99%E3%82%8B%E3%81%AE%E3%81%AB%E5%A4%B1%E6%95%97%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AF,User.new(user_params)%20respond_to%20do%20%7Cformat%7C%20if%20@user.save%20format.html)
+- カリキュラムの説明文
+- 【初心者向けまとめ】flashメッセージの理解と実装
+https://qiita.com/A__Matsuda/items/008be17d5d0659ea9dc0

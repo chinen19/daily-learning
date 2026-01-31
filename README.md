@@ -245,3 +245,29 @@ flash[:danger] = "コメント投稿に失敗しました"
 - カリキュラムの説明文
 - 【初心者向けまとめ】flashメッセージの理解と実装
 https://qiita.com/A__Matsuda/items/008be17d5d0659ea9dc0
+
+
+# 日付: 2026/01/３１
+
+## 学習内容
+- コメント投稿、削除機能のajax化の復習
+- 掲示板のページネーションを仮説を立てて考える
+- 
+
+## 詳細メモ
+- ５W１Hで仮説を立てるやり方が合っていた。ファイルとのつながりを考えきれるようになってきた
+
+### つまずいたポイント
+- ユーザー名を間違えていた
+- HTTPS接続では認証エラーが出た
+
+
+
+## 明日やること
+- 掲示板の検索機能を実装
+
+## 参考リンク
+- [【Rails】kaminariの使い方をざっくりまとめてみた](https://zenn.dev/yukihaga/articles/3d49208638e397)
+- [kaminariを使用してbootstrap5でCSSを追加する
+RailsBootstrap](https://qiita.com/mocomou_/items/c3cce91c241e08f9a50b)
+

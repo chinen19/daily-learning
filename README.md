@@ -224,3 +224,29 @@ RSpecとFactoryBotのセットアップ、設定用ファイル等を確認
 
 ##　来週の目標
 GitHubアウトプット
+
+
+#　10/11(日)〜10/17(土)　2.5h
+##　今週やったこと
+GitHubアウトプット
+rubocop実施
+
+##　振り返り
+
+①GitHubアウトプット
+.rubocop_todo.ymlについて
+rubocop出力の見方
+
+
+②.rubocop.ymlを作成し、設定、実行
+66 files inspected, 2 offenses detected, 1 offense autocorrectable
+66 files inspected, 335 offenses detected, 302 offenses autocorrectable
+
+エラーが多かったが、自動修正で１つまでエラー減らすことができた。
+残り1つのエラーもどこが違うか教えてくれるので、便利だなと改めて思った。
+
+
+##　来週の目標
+GitHubアウトプット
+テスト用データベースを確認
+
